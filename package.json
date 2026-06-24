@@ -1,0 +1,20 @@
+{
+	"name": "leetcode",
+	"license": "MIT",
+	"author": "Ryan Suhartanto <suhartanto@kekkon.nexus>",
+	"type": "module",
+	"scripts": {
+		"prepare": "husky",
+		"fmt": "oxfmt",
+		"lint": "oxlint"
+	},
+	"devDependencies": {
+		"@commitlint/cli": "^21.1.0",
+		"@commitlint/types": "^21.1.0",
+		"@types/bun": "latest",
+		"husky": "^9.1.7",
+		"nano-staged": "^1.0.2",
+		"oxfmt": "^0.56.0",
+		"oxlint": "^1.71.0"
+	}
+}
