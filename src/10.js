@@ -67,8 +67,11 @@ var isMatch = function (s, p) {
 		const check = regex[parser];
 		let char = s.charCodeAt(cursor);
 
+		const isValid = (/** @type {number | true | undefined} */ check) =>
+			cursor < s.length && (check === true || char === check);
+
 		if (!Array.isArray(check)) {
-			if ((check !== true && char !== check) || cursor >= s.length) {
+			if (!isValid(check)) {
 				backTrack();
 				continue;
 			}
@@ -76,16 +79,14 @@ var isMatch = function (s, p) {
 			cursor += 1;
 		} else {
 			check[1] = cursor;
-			while ((check[0] === true || char === check[0]) && cursor < s.length) {
+			while (isValid(check[0])) {
 				char = s.charCodeAt(++cursor);
 				check[2]++;
 			}
 		}
+	} while (!failed && ++parser < regex.length);
 
-		parser += 1;
-	} while (!failed && parser < regex.length);
-
-	return !failed && parser === regex.length && cursor === s.length;
+	return !failed && cursor === s.length;
 };
 
 const dotCode = ".".charCodeAt(0);
