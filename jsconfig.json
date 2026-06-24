@@ -2,6 +2,7 @@
 	"$schema": "https://www.schemastore.org/jsconfig",
 	"extends": ["@kekkon-nexus/config/ts", "@kekkon-nexus/config/ts/strict"],
 	"compilerOptions": {
+		"checkJs": true,
 		"skipLibCheck": true
 	}
 }
