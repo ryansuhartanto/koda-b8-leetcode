@@ -23,7 +23,7 @@ var strStr = function (haystack, needle) {
 			if (needle.charCodeAt(i) === needle.charCodeAt(len)) {
 				lps[i++] = ++len;
 			} else if (len > 0) {
-				len = lps[len - 1];
+				len = lps[len - 1] ?? 0;
 			} else {
 				lps[i++] = 0;
 			}
@@ -40,7 +40,7 @@ var strStr = function (haystack, needle) {
 				j++;
 				if (j === m) return i - m;
 			} else if (j > 0) {
-				j = lps[j - 1];
+				j = lps[j - 1] ?? 0;
 			} else {
 				i++;
 			}

@@ -15,7 +15,7 @@ var findMedianSortedArrays = function (nums1, nums2) {
 	// console.log(nums, nums.length);
 
 	if (nums.length === 1) {
-		return nums[0];
+		return nums[0] ?? 0;
 	}
 
 	const middle = (nums.length - 1) / 2;
@@ -23,10 +23,10 @@ var findMedianSortedArrays = function (nums1, nums2) {
 	// console.log(middle);
 
 	if (Number.isInteger(middle)) {
-		return nums[middle];
+		return nums[middle] ?? 0;
 	} else {
 		const trunc = Math.trunc(middle);
-		return (nums[trunc] + nums[trunc + 1]) / 2;
+		return ((nums[trunc] ?? 0) + (nums[trunc + 1] ?? 0)) / 2;
 	}
 };
 

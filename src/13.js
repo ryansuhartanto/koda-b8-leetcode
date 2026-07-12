@@ -18,11 +18,11 @@ var longestPalindrome = function (s) {
 		typed[i] = s.charCodeAt(i);
 	}
 
-	let goodL;
-	let goodR;
+	let goodL = NaN;
+	let goodR = NaN;
 
 	for (let startL = 0; startL < typed.length - 1; startL++) {
-		const code = typed[startL];
+		const code = typed[startL] ?? 0;
 		let startR = typed.length;
 		let found = false;
 

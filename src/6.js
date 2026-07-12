@@ -4,10 +4,6 @@
  *     this.val = (val===undefined ? 0 : val)
  *     this.next = (next===undefined ? null : next)
  * }
- *
- * @typedef ListNode
- * @prop {number} [val]
- * @prop {ListNode} [next]
  */
 /**
  * 2. Add Two Numbers
@@ -23,7 +19,9 @@
 var addTwoNumbers = function (l1, l2) {
 	const l3 = new ListNode();
 
+	/** @type {ListNode | null | undefined} */
 	let l1n = l1;
+	/** @type {ListNode | null | undefined} */
 	let l2n = l2;
 	let l3n = l3;
 	let extra = 0;

@@ -19,17 +19,20 @@ var intToRoman = function (num) {
 		}
 
 		if (currentNum === 4) {
-			roman += romanObj[current10];
-			roman += romanObj[current10 * (above5 ? 10 : 5)];
+			roman += romanObj[/** @type {keyof typeof romanObj} */ (current10)];
+			roman +=
+				romanObj[
+					/** @type {keyof typeof romanObj} */ (current10 * (above5 ? 10 : 5))
+				];
 			continue;
 		}
 
 		if (above5) {
-			roman += romanObj[current10 * 5];
+			roman += romanObj[/** @type {keyof typeof romanObj} */ (current10 * 5)];
 		}
 
 		for (let x = 0; x < currentNum; x++) {
-			roman += romanObj[current10];
+			roman += romanObj[/** @type {keyof typeof romanObj} */ (current10)];
 		}
 	}
 

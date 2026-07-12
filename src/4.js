@@ -12,7 +12,7 @@ var longestCommonPrefix = function (strs) {
 	const strsLength = strs.length;
 
 	if (strsLength === 1) {
-		return strs[0];
+		return strs[0] ?? "";
 	}
 
 	let commonPrefix = "";

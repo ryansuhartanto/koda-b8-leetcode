@@ -22,7 +22,7 @@ var maxArea = function (height) {
 	let direction = false;
 
 	do {
-		const currentHeight = direction ? height[--b] : height[++a];
+		const currentHeight = (direction ? height[--b] : height[++a]) ?? 0;
 		if (currentHeight <= prevTallest) continue;
 
 		prevTallest = currentHeight;

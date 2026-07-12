@@ -11,7 +11,7 @@ var romanToInt = function (s) {
 	let total = 0;
 
 	for (let i = 0; i < s.length; i++) {
-		const value = romanConverter[s.charAt(i)];
+		const value = romanConverter[/** @type {keyof typeof romanConverter} */ (s.charAt(i))];
 		const maybePre = value - prev;
 
 		// console.log(value, prev, maybePre);

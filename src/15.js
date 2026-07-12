@@ -59,4 +59,4 @@ const minusCode = "-".charCodeAt(0);
 const numberCodes = Array.from({ length: 10 }, (_, i) =>
 	i.toString().charCodeAt(0),
 );
-const numberCodeNormalizer = numberCodes[0];
+const numberCodeNormalizer = numberCodes[0] ?? 0;

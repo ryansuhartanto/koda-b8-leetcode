@@ -17,13 +17,13 @@ var threeSum = function (nums) {
 
 		let left = x + 1;
 		let right = typed.length - 1;
-		const target = -typed[x];
+		const target = -(typed[x] ?? 0);
 
 		while (left < right) {
-			const sum = typed[left] + typed[right];
+			const sum = (typed[left] ?? 0) + (typed[right] ?? 0);
 
 			if (sum === target) {
-				result.push([typed[x], typed[left], typed[right]]);
+				result.push([typed[x] ?? 0, typed[left] ?? 0, typed[right] ?? 0]);
 				do {
 					left++;
 				} while (left < right && typed[left] === typed[left - 1]);

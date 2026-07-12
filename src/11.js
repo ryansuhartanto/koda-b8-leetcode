@@ -34,7 +34,7 @@ var mergeTwoLists = function (list1, list2) {
 
 	const root = curr;
 
-	while (curr.next || grab) {
+	while (curr.next ?? grab) {
 		if (!curr.next) {
 			curr.next = grab;
 			break;
